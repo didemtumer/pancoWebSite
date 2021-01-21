@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.headerContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    background-color:white ;
+    font-family: 'Poppins', sans-serif;
+}
+.headerInfo{
+    text-transform: uppercase;
+    font-size: 1em;
+    margin: auto 0;
+}
+.headerRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+.headerRight>p:nth-child(1){
+    padding-right: 1em;
+    border-right: 2px solid grey;
+}
+.headerRight>p:nth-child(2){
+    padding-left: 1em;
+}
+.cargoInfo{
+    display: none;
+}
+.navBarMenu{
+    background-color: #65226d;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+}
+.navLinks{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0.3em;
+}
+.navLinks a{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navLinks span{
+    display: block;
+}
+.navLinks li{
+    list-style: none;
+}
+.searchBox{
+    position: absolute;
+    right: 5%;
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 10px;
+}
+.searchBtn{
+    color: #000;
+    border: none;
+    float: right;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.searchText{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    float: left;
+    padding: 0;
+    font-size: 1em;
+    transition: 0.4s;
+}
+::placeholder{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.burger{
+    display: none;
+    margin-left: 2rem;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #65226d;
+    margin: 5px;
+}
+.itemImg{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.contentContainer{
+    margin:5px 0;
+    width: 100%;
+}
+.contentContainer .cardsWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cardsWrap .cardsItem{
+    width: 25%;
+    padding: 10px;
+}
+.cardsWrap .cardsInner{
+    background-color: #fff;
+}
+.cardsWrap .cardTop{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    padding-bottom: 0;
+}
+.cardsWrap .cardBottom{
+    padding: 15px;
+}
+.cardsWrap .cardBottom .cardCategory{
+    font-size: 1em;
+}
+.cardInfo .price{
+    color: #65226d;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.mobilePhone{
+    display: none;
+}
+@media screen and (max-width: 1024px) {
+    .cardsWrap .cardsItem{
+        width: 33.3%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        overflow-x:hidden ;
+    }
+    .headerRightInfo{
+        display: none;
+    }
+    .navBarMenu{
+        background-color: white;
+        min-height: 1px;
+    }
+    .navLinks{
+        z-index: 99;
+        position: absolute;
+        left: 0;
+        height: 92vh;
+        top: 18vh;
+        background-color: #65226d;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 50%;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+    .navLinks li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+    .searchBox{
+        display: none;
+    }
+    .headerInfo{
+        display: none;
+    }
+    .cargoInfo{
+        display: flex;
+        background-color: #fcd16e;
+        height: 6vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .cargoInfo p{
+        text-transform: uppercase;
+        margin-top: 0.9em;
+        font-weight: bold;
+    }
+    .cardsWrap .cardsItem{
+        width: 50%;
+    }
+    .mobilePhone{
+        display: block;
+        width: 411px;
+        height: 80px;
+        margin: 10px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .sliderButtonContainer{
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        display: flex;
+    }
+    .sliderButton{
+        width: 100px;
+        height: 40px;
+        background-color: #65226d;
+        margin-right: 10px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sliderButtonContainer a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+}
+@media screen and (max-width: 528px) {
+    .cardsWrap .cardsItem{
+        width: 100%;
+    }
+}
+.navActive{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+ }
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
